@@ -6,7 +6,7 @@
     <Head title="HOME" />
 
     <MainLayout>
-        <!-- <div class="bg-green-500">HOME.VUE</div> -->
+        <div class="bg-green-500">HOME.VUE</div>
     </MainLayout>
    
 </template>
