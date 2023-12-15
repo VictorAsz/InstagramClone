@@ -106,6 +106,14 @@ let showCreatePost = ref(false)
                     </button>
                 </Link>
            
+                <div class="max-w-[300px] flex items-center justify-between py-3">
+                    <div class="text-gray-500 font-extrabold">
+                            Sugeestions for you
+                    </div>
+                    <button class="text-blue-500 hover:text-gray-900 text-xs font-extrabold">
+                        See All
+                    </button>
+                </div>
             </div>
         </div>
    </div>
