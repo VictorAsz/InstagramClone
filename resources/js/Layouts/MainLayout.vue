@@ -94,11 +94,19 @@ let showCreatePost = ref(false)
 
             <div v-if="page.url === '/'" id="SuggestionSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
                 <Link href="/" class="flex items-center justify-between max-w-[300px]">
-                
-                
+                    <div class="flex items-center">
+                        <img class="rounded-full z-10 w-[58px] h-[58px]" src="https://picsum.photos/id/50/380/320">
+                        <div class="pl-4">
+                            <div class="text-black font-extrabold">NAME</div>
+                            <div class="text-gray-500 text-extrabold text-sm">NAME</div>
+                        </div>
+                    </div>
+                    <button class="text-blue-500 hover:text-gray-900 text-xs font-extrabold">
+                        Switch
+                    </button>
                 </Link>
+           
             </div>
-
         </div>
    </div>
 </template>
