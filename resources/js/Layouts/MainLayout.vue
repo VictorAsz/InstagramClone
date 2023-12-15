@@ -114,6 +114,26 @@ let showCreatePost = ref(false)
                         See All
                     </button>
                 </div>
+                <Link href="/" class="flex items-center justify-between max-w-[300px] pb-2">
+                    <div class="flex items-center">
+                        <div class="flex items-center">
+                        <img class="rounded-full z-10 w-[37px] h-[37px]" src="https://picsum.photos/id/200/380/320">
+                        <div class="pl-4">
+                            <div class="text-black font-extrabold">NAME</div>
+                            <div class="text-gray-500 text-extrabold text-sm">NAME</div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                    <button class="text-blue-500 hover:text-gray-900 text-xs font-extrabold">
+                        Follow
+                    </button>
+                </Link>
+                    <div class="max-w-[300px] mt-5">
+                    <div class="text-sm text-gray-400"> About Help Press Api Jobs Privacy Terms Locations Language Meta Verified</div>
+                    <div class="text-left text-gray-400 mt-4"> 2023 INSTAGRAM FROM META</div>
+
+                </div>
             </div>
         </div>
    </div>
