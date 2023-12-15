@@ -45,7 +45,7 @@ let showCreatePost = ref(false)
                 </div>
             </div>
         </div>
-
+                <!-- TopNavBar -->
         <div
             v-if="$page.url !== '/'"
             id="TopNavUser"
@@ -57,7 +57,7 @@ let showCreatePost = ref(false)
             <div class="font-extrabold text-lg">{{ $page.props.auth.user.name }}</div>
             <AccountPlusOutline :size="30" class="cursor-pointer px-4"/>
         </div>
-
+            <!-- SideNavBar -->
         <div id="SideNav" class="fixed h-full bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300">
 
             <Link href="/">
@@ -91,7 +91,7 @@ let showCreatePost = ref(false)
                     <slot />
                 </main>
             </div>
-
+                <!-- Minha conta -->
             <div v-if="$page.url === '/'" id="SuggestionSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
                 <Link href="/" class="flex items-center justify-between max-w-[300px]">
                     <div class="flex items-center">
@@ -105,7 +105,7 @@ let showCreatePost = ref(false)
                         Switch
                     </button>
                 </Link>
-           
+                    <!-- Contas sugeridas -->
                 <div class="max-w-[300px] flex items-center justify-between py-3">
                     <div class="text-gray-500 font-extrabold">
                             Sugeestions for you
@@ -129,6 +129,7 @@ let showCreatePost = ref(false)
                         Follow
                     </button>
                 </Link>
+                <!-- Direitos Autorais -->
                     <div class="max-w-[300px] mt-5">
                     <div class="text-sm text-gray-400"> About Help Press Api Jobs Privacy Terms Locations Language Meta Verified</div>
                     <div class="text-left text-gray-400 mt-4"> 2023 INSTAGRAM FROM META</div>
@@ -136,5 +137,20 @@ let showCreatePost = ref(false)
                 </div>
             </div>
         </div>
+
+        <div id="BottomNav" class="fixed z-30 bottom-0 w-full md:hidden flex items-center justify-around bg-white border-t py-2 border-t-gray-300">
+            <Link href="/">
+                <HomeOutline fillColor="#000000" :size="33" class="cursor-pointer"/>
+            </Link>
+            <Compass fillColor="#000000" :size="33" class="cursor-pointer" />
+            <SendOutline fillColor="#000000" :size="33" class="cursor-pointer" />
+            <Plus @click="$event => showCreatePost = true" fillColor="#000000" :size="33" class="cursor-pointer" />
+            <AccountOutline fillColor="#000000" :size="33" class="cursor-pointer" />
+            <Link href="/">
+                <img class="rounded-full w-[30px] cursor-pointer" src="https://picsum.photos/id/200/300/320">
+            </Link>
+        </div>
+
+
    </div>
 </template>
