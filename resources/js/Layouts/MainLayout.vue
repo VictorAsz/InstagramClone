@@ -73,8 +73,10 @@ let showCreatePost = ref(false)
                 <MenuItem iconString="Explore" class="mb-4"/>
                 <MenuItem iconString="Messages" class="mb-4"/>
                 <MenuItem iconString="Notifications" class="mb-4"/>
-                <MenuItem iconString="Profile" class="mb-4"/>
-       
+                <MenuItem @click="$event => showCreatePost = true" iconString="Create" class="mb-4"/>
+                <Link href="/">
+                    <MenuItem iconString="Profile" class="mb-4"/>
+                </Link>
              
             </div>
                      
@@ -137,7 +139,7 @@ let showCreatePost = ref(false)
                 </div>
             </div>
         </div>
-
+            <!-- BottomNav -->
         <div id="BottomNav" class="fixed z-30 bottom-0 w-full md:hidden flex items-center justify-around bg-white border-t py-2 border-t-gray-300">
             <Link href="/">
                 <HomeOutline fillColor="#000000" :size="33" class="cursor-pointer"/>
