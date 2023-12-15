@@ -91,6 +91,14 @@ let showCreatePost = ref(false)
                     <slot />
                 </main>
             </div>
+
+            <div v-if="page.url === '/'" id="SuggestionSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
+                <Link href="/" class="flex items-center justify-between max-w-[300px]">
+                
+                
+                </Link>
+            </div>
+
         </div>
    </div>
 </template>
