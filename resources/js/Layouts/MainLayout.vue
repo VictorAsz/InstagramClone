@@ -92,7 +92,7 @@ let showCreatePost = ref(false)
                 </main>
             </div>
 
-            <div v-if="page.url === '/'" id="SuggestionSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
+            <div v-if="$page.url === '/'" id="SuggestionSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
                 <Link href="/" class="flex items-center justify-between max-w-[300px]">
                     <div class="flex items-center">
                         <img class="rounded-full z-10 w-[58px] h-[58px]" src="https://picsum.photos/id/50/380/320">
