@@ -15,6 +15,21 @@
         text: null,
         file: null,
     })
+
+    let isValidFile = ref(null)
+    let fileDisplay = ref('')
+    let textarea = ref('')
+    let error = ref({
+        text: null,
+        file: null,
+    })
+
+    const closeOverlay = () => {
+        form.text = null
+        form.file = null
+        fileDisplay.value = ''
+        emit('close')
+    }
 </script>
 
 <template>
