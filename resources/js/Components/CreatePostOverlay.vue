@@ -29,6 +29,17 @@
         let extention = form.file.name.substring(form.file.name.lastIndexOf('.') + 1);
 
         console.log(extention)
+        if(extention == 'png' || extention == 'jpg' || extention == 'jpeg'){
+            isValidFile.value = true
+        } else {
+            isValidFile.value = false
+            return
+        }
+
+        fileDisplay.value = URL.createObjectURL(e.target.files[0])
+        setTimeout(() => {
+            document.getElementById('TextAreaSection').scrollIntoView({behavior: 'smooth'});
+        }, 300)
     }
 
     const closeOverlay = () => {
