@@ -24,6 +24,13 @@
         file: null,
     })
 
+    const getUploadedImage = (e) =>{
+        form.file = e.target.files[0]
+        let extention = form.file.name.substring(form.file.name.lastIndexOf('.') + 1);
+
+        console.log(extention)
+    }
+
     const closeOverlay = () => {
         form.text = null
         form.file = null
@@ -53,8 +60,21 @@
                     <label for="file" class="hover:bg-blue-700 bg-blue-500 rounded-lg p-2.5 text-white font-extrabold cursor-pointer">
                         Select From Computer
                     </label>
-
+                    <input 
+                    id="file"
+                    type="file"
+                    class="hidden"
+                    @input="$event => getUploadedImage($event)"   
+                    >
+                    <div v-if="error && error.file" class="text-red-500 text-center p-2 font-extrabold">
+                        {{ error.file }}
+                    </div>
+                    <div v-if="!fileDisplay && isValidFile === false" class="text-red-500 text-center p-2 font-extrabold">
+                        File not accepted
+                    </div>
                 </div>
+                <img v-if="fileDisplay && isValidFile === true" class="min-w-[400px] p-4 mx-auto" :src="fileDisplay">
+
             </div>
         </div>
     </div>
