@@ -94,6 +94,27 @@
                         <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
                     </div>
                 </div>
+                <div v-if="error && error.text" class="text-red-500 p-2 font-extrabold">{{ error.text }}</div>
+                <div class="flex w-full max-h-[200px] bg-white border-b">
+                    <textarea
+                        ref="textarea"
+                        v-model="form.text"
+                        placeholder="Write caption..."
+                        rows="10"
+                        class="
+                        placeholder-gray-500
+                        w-full
+                        border-0
+                        mt-2
+                        mb-2
+                        z-50
+                        focus:ring-0
+                        text-gray-600
+                        text-[18px]
+                        "
+                    ></textarea>
+                </div>
+
             </div>
 
         </div>
