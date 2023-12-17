@@ -8,6 +8,13 @@
     import ChevronDown from 'vue-material-design-icons/ChevronDown.vue';
 
     //const user = usePage().props.auth.user
+
+    const emit = defineEmits(['close'])
+
+    const form = reactive({
+        text: null,
+        file: null,
+    })
 </script>
 
 <template>
