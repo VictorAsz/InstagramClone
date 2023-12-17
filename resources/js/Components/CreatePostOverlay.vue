@@ -115,6 +115,25 @@
                     ></textarea>
                 </div>
 
+                <div class="flex items-center justify-between border-b p-3">
+                    <div class="text-lg font-extrabold text-gray-500">Add Location </div>
+                    <MapMarkerOutline :size="27"/>
+                </div>
+                <div class="flex items-center justify-between border-b p-3">
+                    <div class="text-lg font-extrabold text-gray-500">Accesibility</div>
+                    <ChevronDown :size="27"/>
+                </div>
+                <div class="flex items-center justify-between border-b p-3">
+                    <div class="text-lg font-extrabold text-gray-500">Advanced Settings </div>
+                    <ChevronDown :size="27"/>
+                </div>
+
+                    <div class="text-gray-500 mt-3 p-3 text-sm">
+                        Your rell will be shared whit your followers in their feeds and can be seen on your profile. It may also appear in places such as Reels, where anyone can see it.
+
+                    </div>
+
+
             </div>
 
         </div>
