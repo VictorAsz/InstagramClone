@@ -85,8 +85,17 @@
                     </div>
                 </div>
                 <img v-if="fileDisplay && isValidFile === true" class="min-w-[400px] p-4 mx-auto" :src="fileDisplay">
-
             </div>
+
+            <div id="TextAreaSection" class="max-w-[720px] w-full relative">
+                <div class="flex items-center justify-between p-3">
+                    <div class="flex items-center">
+                        <img src="https://picsum.photos/id/50/300/320" class="rounded-full w-[38px] h-[38px]">
+                        <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
  </div>
