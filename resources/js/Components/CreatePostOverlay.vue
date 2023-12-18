@@ -29,7 +29,15 @@
         error.value.file = null
 
         router.post('/posts', form,{
-            
+            forceFormData: true,
+            preserveScroll: true,
+            onError: errors => {
+                errors && errors.text ? error.value.text = errors.text : ''
+                errors && errors.file ? error.value.file = errors.file : ''
+            },
+            onSucess: () => {
+                closeOverlay()
+            }
         })
 
     }
