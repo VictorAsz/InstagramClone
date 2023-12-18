@@ -24,6 +24,16 @@
         file: null,
     })
 
+    const createPostFunc =() => {
+        error.value.text = null
+        error.value.file = null
+
+        router.post('/posts', form,{
+            
+        })
+
+    }
+
     const getUploadedImage = (e) =>{
         form.file = e.target.files[0]
         let extention = form.file.name.substring(form.file.name.lastIndexOf('.') + 1);
