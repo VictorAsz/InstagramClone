@@ -135,7 +135,7 @@
             </div>
 
             <div class="grid md:gap-4 gap-1 grid-cols-3 relative">
-                <ContentOverlay>
+                <ContentOverlay/>
             </div>
 
         </div>
