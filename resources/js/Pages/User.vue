@@ -32,7 +32,7 @@
 
 <template>
      <Head title="Instagram" />
-     <MainLayout>
+    <MainLayout>
         <div class="pt-2 md:pt-6"></div>
         <div class="max-w-[880px] lg:ml-0 md:ml-[80px] md:pl-20 px-4 w-[100vw]">
             <div class="flex items-center md:justify-between">
@@ -40,7 +40,7 @@
                 <label for="fileUser">
                     <img
                         class="rounded-full object-fit md:w-[200px] w-[100px] cursor-pointer"
-                        src="https://picsum.photos/id/54/300/320"
+                        src="https://picsum.photos/id/50/300/320"
                     >
                 </label>
                 <input
@@ -49,9 +49,28 @@
                     type="file"
                     @input="$event => getUploadedImage($event)"
                 >
-            </div>
-        </div>
 
-    </MainLayout>
+                <div class="ml-6 w-full">
+                    <div class="flex items-center md:mb-8 mb-5">
+                        <div class="md:mr-6 mr-3 rounded-lg text-[22px]">NAME HERE</div>
+                        <button class="md:block hidden md:mr-6 p-1 px-4 rounded-lg text-[16px] font-extrabold bg-gray-100 hover:bg-gray-200">
+                            Edit Profile
+                        </button>
+                        <Cog :size="28" class="cursor-pointer"/>
+                  </div>      
+                <button class="md:hidden mr-6 p-1 px-4 max-w-[260px] w-full rounded-lg text-[17px] font-extrabold bg-gray-100 hover:bg-gray-200">
+                            Edit Profile
+                </button>
+                    <div md:block hidden>
+                        <div class="flex items-center text-[18px]">
+                            <div class="mr-6" >
+                                <span class="font-extrabold">4</span> posts
+                            </div>
+                        </div>
+                    </div>
+            </div>     
+        </div>
+    </div>
+</MainLayout>
    
 </template>
