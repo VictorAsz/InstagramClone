@@ -58,6 +58,10 @@
                             <img class="rounded-full w-[38px] h-[38px]" src="https://picsum.photos/id/54/300/320" alt="Post">
                             <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
                         </Link>
+                        <div class="flex items-center text-[15px] text-gray-500">
+                            <span class="-mt-5 ml-2 mr-[5px] text-[35px]">.</span>
+                            <div>DATA HERE</div>
+                        </div>
                     </div>
                 </div>
             </div>
