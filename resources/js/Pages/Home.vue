@@ -51,6 +51,10 @@
                     <Navigation/>
                 </template>
             </Carousel>
+            <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10">
+
+
+            </div>
         </div>
     </MainLayout>
    
