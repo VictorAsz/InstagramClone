@@ -12,9 +12,20 @@
 
     let data = reactive({ post: null })
     const form = reactive({ file: null })
-
+    
     const props = defineProps({ postsByUser: Object, user: Object })
     const { postsByUser, user } = toRefs(props)
+    
+    
+
+    const getUploadedImage = (e) =>{
+        form.file = e.target.files[0]    
+        router.post(`/user`, form, {
+            preserveState: false
+        })
+    }
+
+
 
 </script>
 
@@ -22,7 +33,26 @@
     <Head title="Instagram" />
 
     <MainLayout>
- 
+        <div class="pt-2 md:pt-6"></div>
+        <div class="max-w-[880px] lg:ml-0 md:ml-[80px] md:pl-20 px-4 w-[100vw]">
+            <div class="flex items-center md:justify-between">
+
+                <label for="fileUser">
+                    <img
+                        class="rounded-full object-fit md:w-[200px] w-[100px] cursor-pointer"
+                        src="https://picsum.photos/id/54/300/320"
+                        alt="Imagem do usuário"          
+                    >
+                </label>
+                <input
+                    id="fileUser"
+                    class="hidden"
+                    type="file"
+                    @input="$event => getUploadedImage($event)"
+                >
+                
+            </div>
+        </div>
     </MainLayout>
    
 </template>
