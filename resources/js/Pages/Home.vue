@@ -73,7 +73,11 @@
             </div>
 
             <LikeSection />
-
+            <div class="text-black font-extrabold py-5">3 likes</div>
+                <div>
+                        <span class="text-black font-extrabold">NAME HERE</span>
+                        this is some text here
+                </div>
            
             </div>
         </div>
