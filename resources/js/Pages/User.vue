@@ -66,6 +66,12 @@
                             <div class="mr-6" >
                                 <span class="font-extrabold">4</span> posts
                             </div>
+                            <div class="mr-6" >
+                                <span class="font-extrabold">123</span> followers
+                            </div>
+                            <div class="mr-6" >
+                                <span class="font-extrabold">456</span> following
+                            </div>
                         </div>
                     </div>
             </div>     
