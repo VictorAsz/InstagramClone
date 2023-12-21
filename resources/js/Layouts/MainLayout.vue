@@ -17,6 +17,7 @@ import CreatePostOverlay from '@/Components/CreatePostOverlay.vue'
 
 let showCreatePost = ref(false)
 </script>
+
 <template>
       <div id="MainLayout" class="w-full h-screen">
         <div v-if="$page.url === '/'" id="TopNavHome" class="fixed z-30 md:hidden block w-full bg-white h-[61px] border-b border-b-gray-300">
@@ -55,7 +56,7 @@ let showCreatePost = ref(false)
             <Link href="/" class="px-4">
                 <ChevronLeft :size="30" class="cursor-pointer"/>
             </Link>
-            <div class="font-extrabold text-lg">{{ $page.props.auth.user.name }}</div>
+            <div class="font-extrabold text-lg">NAME HERE</div>
             <AccountPlusOutline :size="30" class="cursor-pointer px-4"/>
         </div>
             <!-- SideNavBar -->
