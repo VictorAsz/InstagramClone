@@ -1,8 +1,10 @@
 <script setup>
     import { reactive, toRefs } from 'vue'
     import { Head, Link, router } from '@inertiajs/vue3';
-    import MainLayout from '@/Layouts/MainLayout.vue';
     
+    import MainLayout from '@/Layouts/MainLayout.vue';
+    import ContentOverlay from '@/Components/ContentOverlay.vue'
+
 
     
     import Cog from 'vue-material-design-icons/Cog.vue';
@@ -117,8 +119,25 @@
                         <Grid :size="15" fillColor="#000000" class="cursor-pointer"/>
                         <div class="ml-2 -mb-[1px] text-gray-900">POSTS</div>
                     </div>
+                    <div class="p-[17px] w-1/4 flex justify-center items-center">
+                        <PlayBoxOutline :size="15" fillColor="#8E8E8E" class="cursor-pointer"/>
+                        <div class="ml-2 -mb-[1px] text-gray-900">REELS</div>
+                    </div>
+                    <div class="p-[17px] w-1/4 flex justify-center items-center">
+                        <BookmarkOutline :size="15" fillColor="#8E8E8E" class="cursor-pointer"/>
+                        <span class="ml-2 -mb-[1px]">SAVED</span>
+                    </div>
+                    <div class="p-[17px] w-1/4 flex justify-center items-center">
+                        <AccountBoxOutline :size="15" fillColor="#8E8E8E" class="cursor-pointer"/>
+                        <span class="ml-2 -mb-[1px]">TAGGED</span>
+                    </div>
                 </div>
             </div>
+
+            <div class="grid md:gap-4 gap-1 grid-cols-3 relative">
+                <ContentOverlay>
+            </div>
+
         </div>
 
 </MainLayout>
