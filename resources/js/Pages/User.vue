@@ -61,7 +61,7 @@
                 <button class="md:hidden mr-6 p-1 px-4 max-w-[260px] w-full rounded-lg text-[17px] font-extrabold bg-gray-100 hover:bg-gray-200">
                             Edit Profile
                 </button>
-                    <div md:block hidden>
+                    <div class="md:block hidden">
                         <div class="flex items-center text-[18px]">
                             <div class="mr-6" >
                                 <span class="font-extrabold">4</span> posts
