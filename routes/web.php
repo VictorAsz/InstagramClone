@@ -19,7 +19,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Home');
 });
-
+Route::get('/user', function () {
+    return Inertia::render('User');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
