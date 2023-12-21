@@ -52,8 +52,14 @@
                 </template>
             </Carousel>
             <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10">
-
-
+                <div class="flex items-center justify-between py-2">
+                    <div class="flex items-center">
+                        <Link href="/" class="flex items-center" >
+                            <img class="rounded-full w-[38px] h-[38px]" src="https://picsum.photos/id/54/300/320" alt="Post">
+                            <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     </MainLayout>
