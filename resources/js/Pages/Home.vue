@@ -46,7 +46,9 @@
                             <div class="rounded-full ml-[3px] mt-[3px] w-[58px] h-[58px] bg-white" />
                         </div>
                         <img class="rounded-full w-[56px] h-[56px] -mt-[1px]" src="https://picsum.photos/id/54/300/320">
-                        <div class="text-xs mt-2 w-[60px] truncate text-ellipsis overflow-hidden">NAME HERE</div>
+                        <div class="text-xs mt-2 w-[60px] truncate text-ellipsis overflow-hidden">
+                            NAME HERE
+                        </div>
                     </Link>
                 </Slide>
                 <template #addons>
@@ -76,7 +78,7 @@
                 <div class="text-black font-extrabold py-1">3 likes</div>
                 <div>
                     <span class="text-black font-extrabold">NAME HERE</span>
-                    this is some text here
+                        this is some text here
                 </div>
                 <button class="text-gray-500 font-extrabold py-1">
                     View all 4 comments
@@ -87,7 +89,6 @@
 
         </div>
     </MainLayout>
-   
 </template>
 
 <style>

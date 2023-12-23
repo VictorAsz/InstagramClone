@@ -38,7 +38,7 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <TextInput
+            <TextInput
                     id="email"
                     type="email"
                     class="mt-1 block w-full"
@@ -49,11 +49,11 @@ const submit = () => {
                     placeholder="Email"
                 />
 
-                <InputError class="mt-2" :message="form.errors.email" />
+            <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
-                <TextInput
+            <TextInput
                     id="password"
                     type="password"
                     class="mt-1 block w-full"
@@ -63,13 +63,15 @@ const submit = () => {
                     placeholder="password"
                 />
 
-                <InputError class="mt-2" :message="form.errors.password" />
+            <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
-            <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <PrimaryButton class="mt-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                     Log in
-                </PrimaryButton>
+            </PrimaryButton>
 
+
+           
             <div class="block mt-4">
                 <label class="flex items-center">
                     <Checkbox name="remember" v-model:checked="form.remember" />
