@@ -24,9 +24,13 @@ const submit = () => {
     <GuestLayout>
         <Head title="Register" />
 
+        <img class="mx-auto pt-8 pb-6" src="/insta-logo.png" alt="Instagram Logo">
+
+        <div class="text-gray-600 text-center font-extrabold text-[22px] mb-4">Sign up to see photos and videos from your friends.</div>
+
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="name" value="Name" />
+              
 
                 <TextInput
                     id="name"
@@ -36,13 +40,14 @@ const submit = () => {
                     required
                     autofocus
                     autocomplete="name"
+                    placeholder="Name"
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="email" value="Email" />
+               
 
                 <TextInput
                     id="email"
@@ -51,13 +56,14 @@ const submit = () => {
                     v-model="form.email"
                     required
                     autocomplete="username"
+                    placeholder="email"
                 />
 
                 <InputError class="mt-2" :message="form.errors.email" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+              
 
                 <TextInput
                     id="password"
@@ -66,13 +72,14 @@ const submit = () => {
                     v-model="form.password"
                     required
                     autocomplete="new-password"
+                    placeholder="password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password" />
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password_confirmation" value="Confirm Password" />
+             
 
                 <TextInput
                     id="password_confirmation"
@@ -81,22 +88,35 @@ const submit = () => {
                     v-model="form.password_confirmation"
                     required
                     autocomplete="new-password"
+                    placeholder="Confirm password"
                 />
 
                 <InputError class="mt-2" :message="form.errors.password_confirmation" />
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <PrimaryButton class="mt-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                    Register
+                </PrimaryButton>
+
+            <div class="flex items-center justify-center mt-4">
                 <Link
                     :href="route('login')"
-                    class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    class="text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                     Already registered?
                 </Link>
+            </div>
 
-                <PrimaryButton class="ms-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                    Register
-                </PrimaryButton>
+            <div class="flex items-center justify-center mt-4">
+                Have an account?
+                <Link
+                    :href="route('login')"
+                    class="pl-1 font-bold text-blue-600 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                    Log in?
+                </Link>
+
+            
             </div>
         </form>
     </GuestLayout>
