@@ -1,34 +1,31 @@
 <script setup>
-import { computed } from 'vue';
+import {ref, toRefs} from 'vue'
+import { usePage } from `@inertiajs/vue3`
 
-const emit = defineEmits(['update:checked']);
+import ShowPostOptionsOverlay from '@/Components/ShowPostOptionsOverlay.vue'
+import LikesSection from '@/Components/LikesSection.vue'
 
-const props = defineProps({
-    checked: {
-        type: [Array, Boolean],
-        required: true,
-    },
-    value: {
-        default: null,
-    },
-});
+import Close from 'vue-material-design-icons/Close.vue';
+import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
+import EmoticonHappyOutline from 'vue-material-design-icons/EmoticonHappyOutline.vue';
 
-const proxyChecked = computed({
-    get() {
-        return props.checked;
-    },
+let comment = ref('')
+let deleteType = ref(null)
+let id = ref(null)
 
-    set(val) {
-        emit('update:checked', val);
-    },
-});
+const user = usePage().props.auth.user
+
+const props = defineProps(['post'])
+const { post } = toRefs(props)
+
+defineEmits(['closeOverlay', 'addComment', 'updateLike', 'deleteSelected'])
+
+const textareaInput = (e) => {
+    textarea.value.style.height = "auto";
+    textarea.value.style.height = `${e.target.scrollHeight}px`;
+}
 </script>
 
 <template>
-    <input
-        type="checkbox"
-        :value="value"
-        v-model="proxyChecked"
-        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
-    />
+   
 </template>
