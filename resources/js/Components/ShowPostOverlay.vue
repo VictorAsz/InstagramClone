@@ -49,7 +49,29 @@ const textareaInput = (e) => {
                                 <span class="-mt-5 ml-2 mr-[5px] text-[35px]">.</span>
                                 <div>DATE HERE</div>
                             </div>
-                        </div>   
+                        </div>  
+                        <button>
+                            <DotsHorizontal class="cursor-pointer" :size="27"/>
+                        </button> 
+                    </div>
+                    
+                    <div class="overflow-y-auto h-[calc(100%-170px)]">
+                        <div class="flex items-center justify-between p-3">
+                            <div class="flex items-center relative">
+                                <img
+                                    class=" absolute -top-1 rounded-full w-[38px] h-[38px]"
+                                    src="https://picsum.photos/id/54/800/820"
+                                >
+                                <div class="ml-14">
+                                    <span class="font-extrabold text-[15px] mr-2">
+                                        NAME HERE
+                                    </span>
+                                    <span class="text-[15px] text-gray-900">
+                                        THIS IS A COMMENT
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
