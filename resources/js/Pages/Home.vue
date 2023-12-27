@@ -3,7 +3,7 @@
     import { Head, Link, router } from '@inertiajs/vue3';
     import MainLayout from '@/Layouts/MainLayout.vue';
 
-    import LikeSection from '@/Components/LikeSection.vue'
+    import LikesSection from '@/Components/LikesSection.vue'
     import ShowPostOverlay from '@/Components/ShowPostOverlay.vue'
     
     import 'vue3-carousel/dist/carousel.css'
@@ -76,7 +76,7 @@
                 <img class="mx-auto w-full" src="https://picsum.photos/id/54/300/320" alt="post">
             </div>
 
-            <LikeSection />
+            <LikesSection />
                 <div class="text-black font-extrabold py-1">3 likes</div>
                 <div>
                     <span class="text-black font-extrabold">NAME HERE</span>
