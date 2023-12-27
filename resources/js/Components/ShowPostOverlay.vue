@@ -54,7 +54,7 @@ const textareaInput = (e) => {
                             <DotsHorizontal class="cursor-pointer" :size="27"/>
                         </button> 
                     </div>
-                    
+                     
                     <div class="overflow-y-auto h-[calc(100%-170px)]">
                         <div class="flex items-center justify-between p-3">
                             <div class="flex items-center relative">
