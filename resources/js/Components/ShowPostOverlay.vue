@@ -98,6 +98,32 @@ const textareaInput = (e) => {
                     <LikesSection
                     class="px-2 border-t mb-2"
                     />
+
+                    <div class="absolute flex border bottom-0 w-full max-h-[200px] bg-white overflow-auto">
+                        <EmoticonHappyOutline class="pl-3 pt-[10px]" :size="30"/>
+                        <textarea
+                            ref="textarea"
+                            :oninput="textarea"
+                            v-model="comment" 
+                            placeholder="add a comment..."
+                            rows="1" 
+                            class="
+                                w-full
+                                border-0
+                                mt-2
+                                mb-2
+                                text-sm
+                                z-50
+                                focus:ring-0
+                                text-gray-600
+                                text-[18px]
+                            "
+                        > </textarea>
+                            
+                       
+
+                    </div>
+        
                 </div>
             </div>
         </div>
