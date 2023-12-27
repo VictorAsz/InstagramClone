@@ -72,6 +72,15 @@ const textareaInput = (e) => {
                                 </div>
                             </div>
                         </div>
+                        <div class="p-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <img class="rounded-full w-[38px] h-[38px]" src="https://picsum.photos/id/54/800/820">
+
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
