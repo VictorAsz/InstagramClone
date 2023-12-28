@@ -10,7 +10,7 @@ import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 import EmoticonHappyOutline from 'vue-material-design-icons/EmoticonHappyOutline.vue';
 
 let comment = ref('')
-let deleteType = ref(null)
+let deleteType = ref(true)
 let id = ref(null)
 
 const user = usePage().props.auth.user
