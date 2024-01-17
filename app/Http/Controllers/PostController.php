@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Services\FileService;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -20,6 +21,10 @@ class PostController extends Controller
             'text' => 'required'
         ]);
         $post = (new FileService)->updateFile($post, $request, 'post');
+
+        $post->user_id = auth()->user()->id;
+        $post->text = $request->input('text');
+        $post->save();
     }
   
 
