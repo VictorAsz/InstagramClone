@@ -28,19 +28,20 @@
         error.value.text = null
         error.value.file = null
 
-        router.post('/posts', form,{
+        router.post('/posts', form, {
             forceFormData: true,
             preserveScroll: true,
             onError: errors => {
                 errors && errors.text ? error.value.text = errors.text : ''
                 errors && errors.file ? error.value.file = errors.file : ''
             },
-            onSucess: () => {
+            onSuccess: () => {
                 closeOverlay()
             }
         })
 
     }
+
 
     const getUploadedImage = (e) =>{
         form.file = e.target.files[0]
@@ -78,7 +79,7 @@
         <div class="flex items-center justify-between w-full rounded-t-xl p-3 border-b border-b-gray-300">
             <ArrowLeft :size="30" fillColor="#000000" @click="$event =>closeOverlay()"/>
                 <div class="text-lg font-extrabold">New Reel</div>
-                <button class="text-lg text-blue-500 hover:text-gray-900 font-extrabold">
+                <button @click="$event => createPostFunc()" class="text-lg text-blue-500 hover:text-gray-900 font-extrabold">
                     Share
 
                 </button>            

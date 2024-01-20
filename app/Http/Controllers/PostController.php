@@ -17,7 +17,7 @@ class PostController extends Controller
     {
         $post = new Post;
         $request->validate([
-            'file' => 'required|mimes:jpg)jpeg,png',
+            'file' => 'required|mimes:jpg,jpeg,png',
             'text' => 'required'
         ]);
         $post = (new FileService)->updateFile($post, $request, 'post');
@@ -35,13 +35,14 @@ class PostController extends Controller
     {
         $post = Post::find($id);
 
-        if (!empty($post->file)){
+        if (!empty($post->file)) {
             $currentFile = public_path() . $post->file;
 
-            if(file_exists($currentFile)) {
+            if (file_exists($currentFile)) {
                 unlink($currentFile);
             }
         }
+
         $post->delete();
 
     }
