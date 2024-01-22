@@ -47,7 +47,6 @@
         form.file = e.target.files[0]
         let extention = form.file.name.substring(form.file.name.lastIndexOf('.') + 1);
 
-        console.log(extention)
         if(extention == 'png' || extention == 'jpg' || extention == 'jpeg'){
             isValidFile.value = true
         } else {
