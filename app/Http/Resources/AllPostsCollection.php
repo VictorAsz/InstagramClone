@@ -14,13 +14,13 @@ class AllPostsCollection extends ResourceCollection
      */
     public function toArray(Request $request)
     {
-        return $this->collection->map(function ($post){
+        return $this->collection->map(function ($post) {
             return [
                 'id' => $post->id,
                 'text' => $post->text,
                 'file' => $post->file,
-                'created_at' => $post->created_at->format(' M D Y'),
-                'comments' => $post->comments->map(function ($comment){
+                'created_at' => $post->created_at->format('M d, Y'),
+                'comments' => $post->comments->map(function ($comment) {
                     return [
                         'id' => $comment->id,
                         'text' => $comment->text,
@@ -30,20 +30,20 @@ class AllPostsCollection extends ResourceCollection
                             'file' => $comment->user->file,
                         ],
                     ];
-                }),
-                'likes' => $post->likes->map(function ($like){
-                    return[
+                })->all(),
+                'likes' => $post->likes->map(function ($like) {
+                    return [
                         'id' => $like->id,
                         'user_id' => $like->user_id,
                         'post__id' => $like->post_id,
                     ];
-                }),
+                })->all(),
                 'user' => [
                     'id' => $post->user->id,
                     'name' => $post->user->name,
                     'file' => $post->user->file,
-                ]
+                ],
             ];
-        });
+        })->all();  // Adicionado ->all() no final
     }
 }
