@@ -33,6 +33,7 @@
     <Head title="Instagram" />
 
     <MainLayout>
+      
         <div class="mx-auto lg:pl-0 md:pl-[80px] pl-0">
             <Carousel
                 v-model="currentSlide"
@@ -43,14 +44,14 @@
                 :transition="500"
                 snapAlign="start"
             >
-                <Slide v-for="slide in 10" :key="slide">
-                    <Link href="/" class="relative mx-auto text-center mt-4 px-2 cursor-pointer">
+                <Slide v-for="slide in allUsers" :key="slide">
+                    <Link :href="route('users.show', {id: slide.id})" class="relative mx-auto text-center mt-4 px-2 cursor-pointer">
                         <div class="absolute z-[-1] -top-[5px] left-[4px] rounded-full rotate-45 w-[64px] h-[64px] contrast-[1.3]  bg-gradient-to-t from-yellow-300 to-purple-500 via-red-500">
                             <div class="rounded-full ml-[3px] mt-[3px] w-[58px] h-[58px] bg-white" />
                         </div>
-                        <img class="rounded-full w-[56px] h-[56px] -mt-[1px]" src="https://picsum.photos/id/54/300/320">
+                        <img class="rounded-full w-[56px] h-[56px] -mt-[1px]" :src="slide.file">
                         <div class="text-xs mt-2 w-[60px] truncate text-ellipsis overflow-hidden">
-                            NAME HERE
+                            {{slide.name}}
                         </div>
                     </Link>
                 </Slide>
