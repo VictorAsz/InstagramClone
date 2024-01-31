@@ -59,7 +59,7 @@
                     <Navigation/>
                 </template>
             </Carousel>
-            <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10" v-for="post in posts.data" :key="posts">
+            <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10" v-for="post in posts.data" :key="post">
                 <div class="flex items-center justify-between py-2">
                     <div class="flex items-center">
                         <Link :href="route('users.show', {id: post.user.id})" class="flex items-center" >
@@ -78,17 +78,20 @@
                 <img class="mx-auto w-full" :src="post.file" alt="post">
             </div>
 
-            <LikesSection />
-                <div class="text-black font-extrabold py-1">3 likes</div>
+            <LikesSection
+                :posts="post"
+                @like="$event => updateLike($event)"
+            />
+                <div class="text-black font-extrabold py-1">{{ post.likes.length }}likes</div>
                 <div>
-                    <span class="text-black font-extrabold">NAME HERE</span>
-                        this is some text here
+                    <span class="text-black font-extrabold">{{ post.user.name }}</span>
+                        {{ post.text }}
                 </div>
                 <button 
-                    @click="$event => openOverlay = true"
+                     @click="currentPost = post; openOverlay = true"
                     class="text-gray-500 font-extrabold py-1"
                 >
-                    View all 4 comments
+                    View all {{ post.comments.length }} comments
                 </button>
             </div>
 
