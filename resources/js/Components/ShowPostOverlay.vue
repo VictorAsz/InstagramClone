@@ -10,7 +10,7 @@ import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 import EmoticonHappyOutline from 'vue-material-design-icons/EmoticonHappyOutline.vue';
 
 let comment = ref('')
-let deleteType = ref(true)
+let deleteType = ref(false)
 let id = ref(null)
 
 const user = usePage().props.auth.user
@@ -36,7 +36,7 @@ const textareaInput = (e) => {
                 <div class="flex items-center bg-black w-full">
                     <img
                         class="rounded-xl min-w-[400px] p-4 mx-auto"
-                        src="https://picsum.photos/id/54/800/820"
+                        :src="post.file"
                     >
                 </div>
 
