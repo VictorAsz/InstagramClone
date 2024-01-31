@@ -59,23 +59,23 @@
                     <Navigation/>
                 </template>
             </Carousel>
-            <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10">
+            <div id="Posts" class="px-4 max-w-[600px] mx-auto mt-10" v-for="post in posts.data" :key="posts">
                 <div class="flex items-center justify-between py-2">
                     <div class="flex items-center">
-                        <Link href="/" class="flex items-center" >
-                            <img class="rounded-full w-[38px] h-[38px]" src="https://picsum.photos/id/54/300/320" alt="icon profile post">
-                            <div class="ml-4 font-extrabold text-[15px]">NAME HERE</div>
+                        <Link :href="route('users.show', {id: post.user.id})" class="flex items-center" >
+                            <img class="rounded-full w-[38px] h-[38px]" :src="post.user.file" alt="icon profile post">
+                            <div class="ml-4 font-extrabold text-[15px]">{{ post.user.name }}</div>
                         </Link>
                         <div class="flex items-center text-[15px] text-gray-500">
                             <span class="-mt-5 ml-2 mr-[5px] text-[35px]">.</span>
-                            <div>DATA HERE</div>
+                            <div>{{ post.created_at }}</div>
                         </div>
                     </div>
                     <DotsHorizontal class="cursor-pointer" :size="27"/>
                 </div>
                 
              <div class="bg-black rounded-lg w-full min-h-[400px] flex items-center">
-                <img class="mx-auto w-full" src="https://picsum.photos/id/54/300/320" alt="post">
+                <img class="mx-auto w-full" :src="post.file" alt="post">
             </div>
 
             <LikesSection />
