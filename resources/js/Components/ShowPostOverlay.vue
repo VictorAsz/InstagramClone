@@ -52,7 +52,7 @@ const textareaInput = (e) => {
                         </div>  
                         <button
                             v-if="user.id === post.user.id"
-                            @click="delete"
+                            @click="deleteType = 'Post'; id = post.id"
                         >
                             <DotsHorizontal class="cursor-pointer" :size="27"/>
                         </button> 
@@ -63,43 +63,53 @@ const textareaInput = (e) => {
                             <div class="flex items-center relative">
                                 <img
                                     class=" absolute -top-1 rounded-full w-[38px] h-[38px]"
-                                    src="https://picsum.photos/id/54/800/820"
+                                    :src="post.user.file"
                                 >
                                 <div class="ml-14">
                                     <span class="font-extrabold text-[15px] mr-2">
-                                        NAME HERE
+                                       {{post.user.name}}
                                     </span>
                                     <span class="text-[15px] text-gray-900">
-                                        THIS IS A COMMENT
+                                        {{post.text}}
                                     </span>
                                 </div>
                             </div>
                         </div>
-                        <div class="p-3">
+                        <div 
+                            v-if="post.commments"
+                            class="p-3"
+                            v-for="comment in post.comments"
+                            :key="comment"
+                        >
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
-                                    <img class="rounded-full w-[38px] h-[38px]" src="https://picsum.photos/id/54/800/820">
+                                    <img class="rounded-full w-[38px] h-[38px]" :src="comment.user.file">
                                     <div class="ml-4 font-extrabold text-[15px]">
-                                    NAME
-                                    <span class="font-light text-gray-700 text-sm">DATE HERE</span>
+                                   {{ comment.user.name }}
+                                    <span class="font-light text-gray-700 text-sm">{{post.created_at}}</span>
 
                                 </div>
                              </div>
                                 
                              <DotsHorizontal
+                                v-if="user.id === comment.user.id"
                                 class="cursor-pointer"
+                                @click="deleteType = 'Comment'; id = comment.id"
                                 :size="27"
                              />
 
                             </div>
                             <div class="text-[13px] pl-[55px]">
-                                THIS COMMENT SECTION
+                                {{comment.text}}
                             </div>
                         </div>
                         <div class="pb-16 md:hidden"></div>
                     </div>
                     <LikesSection
+                    v-if="post"
                     class="px-2 border-t mb-2"
+                    :post="post"
+                    @like="$emit('updateLike, $event')"
                     />
 
                     <div class="absolute flex border bottom-0 w-full max-h-[200px] bg-white overflow-auto">
@@ -125,6 +135,8 @@ const textareaInput = (e) => {
                         <button
                             v-if="comment"
                             class="text-blue-600 font-extrabold pr-4"
+                            @click="$emit('addComment', {post, user, comment});
+                            comment = ''"
                         >
                             Post
                         </button>
@@ -137,5 +149,19 @@ const textareaInput = (e) => {
         </div>
     </div>
 
-    <ShowPostOptionsOverlay v-if="deleteType"/>
+    <ShowPostOptionsOverlay 
+        v-if="deleteType"
+        :deleteType="deleteType"
+        :id="id"
+        @deleteSelected="$emit('deleteSelected', {
+            deleteType: $event.deleteType,
+            id: $event.id,
+            post: post,
+        })
+        deleteType = null;
+        id = null;
+    "
+    @close="deleteType = null; id = null"
+
+    />
 </template>
