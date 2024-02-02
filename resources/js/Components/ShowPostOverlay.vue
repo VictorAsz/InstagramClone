@@ -109,10 +109,10 @@ const textareaInput = (e) => {
                         <div class="pb-16 md:hidden"></div>
                     </div>
                     <LikesSection
-                    v-if="post"
-                    class="px-2 border-t mb-2"
-                    :post="post"
-                    @like="$emit('updateLike, $event')"
+                        v-if="post"
+                        class="px-2 border-t mb-2"
+                        :post="post"
+                        @like="$emit('updateLike', $event)"
                     />
 
                     <div class="absolute flex border bottom-0 w-full max-h-[200px] bg-white overflow-auto">
