@@ -51,6 +51,10 @@ const deleteFunc = (object) => {
     router.delete(url, {
         onFinish: () => updatedPost(object),
     })
+
+    if (object.deleteType === 'Post') {
+        openOverlay.value = false
+    }
 }
 
 
