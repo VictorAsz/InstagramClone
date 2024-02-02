@@ -147,7 +147,7 @@ const updatedPost = (object) => {
                 :post="post"
                 @like="$event => updateLike($event)"
             />
-                <div class="text-black font-extrabold py-1">{{ post.likes.length }}likes</div>
+                <div class="text-black font-extrabold py-1">{{ post.likes.length }} likes</div>
                 <div>
                     <span class="text-black font-extrabold">{{ post.user.name }}</span>
                         {{ post.text }}
