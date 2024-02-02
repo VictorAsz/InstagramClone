@@ -75,34 +75,37 @@ const textareaInput = (e) => {
                                 </div>
                             </div>
                         </div>
-                        <div 
-                            v-if="post.commments"
+                        <div
+                            v-if="post.comments"
                             class="p-3"
                             v-for="comment in post.comments"
                             :key="comment"
                         >
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
-                                    <img class="rounded-full w-[38px] h-[38px]" :src="comment.user.file">
+                                    <img
+                                        class="rounded-full w-[38px] h-[38px]"
+                                        :src="comment.user.file"
+                                    >
                                     <div class="ml-4 font-extrabold text-[15px]">
-                                   {{ comment.user.name }}
-                                    <span class="font-light text-gray-700 text-sm">{{post.created_at}}</span>
-
+                                        {{ comment.user.name }}
+                                        <span class="font-light text-gray-700 text-sm">{{ post.created_at }}</span>
+                                    </div>
                                 </div>
-                             </div>
-                                
-                             <DotsHorizontal
-                                v-if="user.id === comment.user.id"
-                                class="cursor-pointer"
-                                @click="deleteType = 'Comment'; id = comment.id"
-                                :size="27"
-                             />
 
+                                <DotsHorizontal
+                                    v-if="user.id === comment.user.id"
+                                    class="cursor-pointer"
+                                    @click="deleteType = 'Comment'; id = comment.id"
+                                    :size="27"
+                                />
                             </div>
+
                             <div class="text-[13px] pl-[55px]">
-                                {{comment.text}}
+                                {{ comment.text }}
                             </div>
                         </div>
+
                         <div class="pb-16 md:hidden"></div>
                     </div>
                     <LikesSection
@@ -136,7 +139,8 @@ const textareaInput = (e) => {
                             v-if="comment"
                             class="text-blue-600 font-extrabold pr-4"
                             @click="$emit('addComment', {post, user, comment});
-                            comment = ''"
+                            comment = ''
+                            "
                         >
                             Post
                         </button>
