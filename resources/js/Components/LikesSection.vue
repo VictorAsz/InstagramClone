@@ -36,7 +36,7 @@ const isHeartActiveComputed = computed(() => {
      <div class="flex z-20 items-center justify-between">
         <div class="flex items-center">
             <button @click="$event => $emit('like', { post, user })" class="-mt-[14px]">
-                <HeartOutline v-if="!teste" class="pl-3 cursor-pointer" :size="30" />
+                <HeartOutline v-if="!isHeartActiveComputed" class="pl-3 cursor-pointer" :size="30" />
                 <Heart v-else class="pl-3 cursor-pointer" fillColor="#FF0000" :size="30"/>
             </button>
             <CommentOutline class="pl-3 pt-[10px]" :size="30" />
