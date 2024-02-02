@@ -3,6 +3,7 @@
     import { Head, Link, router } from '@inertiajs/vue3';
     
     import MainLayout from '@/Layouts/MainLayout.vue';
+    import ShowPostOverlay from '@/Components/ShowPostOverlay.vue';
     import ContentOverlay from '@/Components/ContentOverlay.vue'
 
 
@@ -206,5 +207,16 @@ const updatedPost = (object) => {
         </div>
 
 </MainLayout>
+
+<ShowPostOverlay
+    v-if="data.post"
+        :post="data.post"
+        @addComment="addComment($event)"
+        @updateLike="updateLike($event)"
+        @deleteSelected="
+            deleteFunc($event);
+        "
+        @closeOverlay="data.post = null"
+    />
    
 </template>
