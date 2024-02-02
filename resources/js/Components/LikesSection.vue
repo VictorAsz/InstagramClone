@@ -8,6 +8,7 @@ import CommentOutline from 'vue-material-design-icons/CommentOutline.vue';
 import SendOutline from 'vue-material-design-icons/SendOutline.vue';
 import BookmarkOutline from 'vue-material-design-icons/BookmarkOutline.vue';
 
+
 const props = defineProps(['post'])
 const { post } = toRefs(props)
 
@@ -15,25 +16,28 @@ const emit = defineEmits(['like'])
 
 const user = usePage().props.auth.user
 
-const isHeartActiveComputed = cumputed(() => {
+const teste = false
+
+const isHeartActiveComputed = computed(() => {
     let isTrue = false
 
-    for (let i = 0; i < post.value.likes.length; i++){
+    for (let i = 0; i < post.value.likes.length; i++) {
         const like = post.value.likes[i];
-        if (like.user_id === user.id && like.post_id === post.value.id){
+        if (like.user_id === user.id && like.post_id === post.value.id) {
             isTrue = true
         }
     }
-})
 
+    return isTrue
+})
 </script>
 
 <template>
      <div class="flex z-20 items-center justify-between">
         <div class="flex items-center">
-            <button  class="-mt-[14px]">
-                <HeartOutline  class="pl-3 cursor-pointer" :size="30" />
-                
+            <button @click="$event => $emit('like', { post, user })" class="-mt-[14px]">
+                <HeartOutline v-if="!teste" class="pl-3 cursor-pointer" :size="30" />
+                <Heart v-else class="pl-3 cursor-pointer" fillColor="#FF0000" :size="30"/>
             </button>
             <CommentOutline class="pl-3 pt-[10px]" :size="30" />
             <SendOutline class="pl-3 pt-[10px]" :size="30" />

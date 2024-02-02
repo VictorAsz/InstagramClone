@@ -35,14 +35,14 @@ class AllPostsCollection extends ResourceCollection
                     return [
                         'id' => $like->id,
                         'user_id' => $like->user_id,
-                        'post__id' => $like->post_id,
+                        'post_id' => $like->post_id
                     ];
                 })->all(),
                 'user' => [
                     'id' => $post->user->id,
                     'name' => $post->user->name,
                     'file' => $post->user->file,
-                ],
+                ]
             ];
         })->all();  // Adicionado ->all() no final
     }
