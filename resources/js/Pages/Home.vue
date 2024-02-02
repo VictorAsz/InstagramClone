@@ -27,6 +27,67 @@
         wWidth.value = window.innerWidth
     })
 })
+
+const addComment = (object) => {
+    router.post('/comments', {
+        post_id: object.post.id,
+        user_id: object.user.id,
+        comment: object.comment
+    }, {
+        onFinish: () => updatedPost(object),
+    }
+    )
+}
+
+
+const deleteFunc = (object) => {
+    let url = ''
+    if (object.deleteType === 'Post') {
+        url = '/posts/' + object.id
+    } else {
+        url = '/comments/' + object.id
+    }
+
+    router.delete(url, {
+        onFinish: () => updatedPost(object),
+    })
+}
+
+
+const updateLike = (object) => {
+    let deleteLike = false
+    let id = null
+
+    for (let i = 0; i < object.post.likes.length; i++) {
+        const like = object.post.likes[i];
+        if (like.user_id === object.user.id && like.post_id === object.post.id){
+            deleteLike = true
+            id = like.id
+        } 
+    }
+    if(deleteLike){
+        router.delete('/likes/' + id, {
+            onFinish: () => updatedPost(object),
+        })
+    }else{
+            router.post('/likes', {
+                post_id: object.post.id
+            },{
+                onFinish: () => updatedPost(object),
+            })
+        }
+}
+
+
+const updatedPost = (object) => {
+    for (let i = 0; i < posts.value.data.length; i++) {
+        const post = posts.value.data[i];
+        if (post.id === object.post.id) {
+            currentPost.value = post
+        }
+    }
+}
+
 </script>
 
 <template>
@@ -79,7 +140,7 @@
             </div>
 
             <LikesSection
-                :posts="post"
+                :post="post"
                 @like="$event => updateLike($event)"
             />
                 <div class="text-black font-extrabold py-1">{{ post.likes.length }}likes</div>
@@ -100,9 +161,14 @@
         </div>
     </MainLayout>
     <ShowPostOverlay
-        v-if="openOverlay"
+    v-if="openOverlay"
         :post="currentPost"
-        @closeOverlay="$event => openOverlay = false"
+        @addComment="addComment($event)"
+        @updateLike="updateLike($event)"
+        @deleteSelected="
+            deleteFunc($event);
+        "
+        @closeOverlay="openOverlay = false"
     />
 
 </template>
